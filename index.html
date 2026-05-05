@@ -1,270 +1,55 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio Mutiara Sophia Ningsih - Mahasiswa Universitas Pahlawan, English Speaker & Creative Thinker">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+
+  <!-- SEO Meta Tags -->
   <title>Mutiara Sophia Ningsih | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portfolio personal Mutiara Sophia Ningsih - Mahasiswa S1 Universitas Pahlawan, mahir berbahasa Inggris, Creative Thinker & Hard Worker." />
+  <meta name="keywords" content="Mutiara Sophia Ningsih, portfolio, mahasiswa, Universitas Pahlawan, English speaker, student portfolio" />
+  <meta name="author" content="Mutiara Sophia Ningsih" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mutiara Sophia Ningsih | Portfolio" />
+  <meta property="og:description" content="Portfolio personal Mutiara Sophia Ningsih - Mahasiswa S1 Universitas Pahlawan, English Speaker & Creative Thinker." />
+  <meta property="og:image" content="/favicon.png" />
+  <meta property="og:url" content="https://mutiara-sophia.vercel.app" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mutiara Sophia Ningsih | Portfolio" />
+  <meta name="twitter:description" content="Portfolio personal Mutiara Sophia Ningsih - Mahasiswa S1 Universitas Pahlawan." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://mutiara-sophia.vercel.app" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mutiara Sophia Ningsih",
+    "jobTitle": "Mahasiswa S1",
+    "affiliation": { "@type": "Organization", "name": "Universitas Pahlawan" },
+    "knowsLanguage": ["Indonesian", "English"],
+    "url": "https://mutiara-sophia.vercel.app"
+  }
+  </script>
 </head>
 <body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <a href="#" class="nav-logo">✨ Mutiara</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">🏠 Home</a></li>
-      <li><a href="#about">💝 About</a></li>
-      <li><a href="#skills">🌟 Skills</a></li>
-      <li><a href="#education">🎓 Education</a></li>
-      <li><a href="#portfolio">🎨 Portfolio</a></li>
-      <li><a href="#contact">💌 Contact</a></li>
-    </ul>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="hero-text">
-        <span class="greeting">🌸 Halo, Perkenalkan saya</span>
-        <h1>Mutiara Sophia Ningsih</h1>
-        <p class="tagline">
-          <span class="typing-text"></span><span style="animation:blink 1s infinite;color:var(--pink)">|</span>
-        </p>
-        <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
-        <p style="color:var(--text-light);margin-bottom:24px;">
-          Mahasiswa S1 Universitas Pahlawan yang passionate dalam bahasa Inggris dan pengembangan diri ✨
-        </p>
-        <div class="hero-buttons">
-          <a href="#about" class="btn btn-primary">Kenali Saya 💖</a>
-          <a href="#contact" class="btn btn-outline">Hubungi 💌</a>
-        </div>
-      </div>
-      <div class="hero-image-wrapper">
-        <div class="hero-image-circle">
-          <img src="assets/images/profile.png" alt="Mutiara Sophia Ningsih">
-        </div>
-        <!-- Floating Icons -->
-        <span class="floating-icon fi-1">📚</span>
-        <span class="floating-icon fi-2">🌟</span>
-        <span class="floating-icon fi-3">🇬🇧</span>
-        <span class="floating-icon fi-4">💖</span>
-        <span class="floating-icon fi-5">🎓</span>
-        <span class="floating-icon fi-6">🦋</span>
-        <span class="floating-icon fi-7">✨</span>
-        <span class="floating-icon fi-8">🌸</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="section-header reveal">
-      <span class="emoji">💝</span>
-      <h2>Tentang Saya</h2>
-      <p>Kenali lebih dekat siapa saya~</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-card reveal-left">
-        <h3>🌸 Siapa Saya?</h3>
-        <p>
-          Hai! Saya <strong>Mutiara Sophia Ningsih</strong>, seorang mahasiswa S1 di
-          <strong>Universitas Pahlawan</strong>. Saya memiliki passion yang besar dalam
-          bahasa Inggris dan selalu berusaha mengembangkan kemampuan diri. Saya percaya
-          bahwa setiap hari adalah kesempatan untuk belajar sesuatu yang baru! 🌈
-        </p>
-        <br>
-        <p>
-          Selain belajar, saya juga suka mengeksplorasi hal-hal kreatif dan berkolaborasi
-          dengan orang lain. Motto saya: <em>"Be the best version of yourself"</em> ✨
-        </p>
-      </div>
-      <div class="about-stats reveal-right">
-        <div class="stat-item">
-          <span class="stat-icon">🎓</span>
-          <div class="stat-num">S1</div>
-          <div class="stat-label">Jenjang Pendidikan</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-icon">🇬🇧</span>
-          <div class="stat-num">A+</div>
-          <div class="stat-label">English Proficiency</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-icon">📚</span>
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Proyek Selesai</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-icon">💖</span>
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Semangat!</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section class="skills" id="skills">
-    <div class="section-header reveal">
-      <span class="emoji">🌟</span>
-      <h2>Keahlian Saya</h2>
-      <p>Kemampuan yang terus saya kembangkan~</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card reveal">
-        <span class="skill-icon">🇬🇧</span>
-        <h3>English Speaking</h3>
-        <p>Fasih berbicara bahasa Inggris dengan kepercayaan diri tinggi</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="95%"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="skill-icon">✍️</span>
-        <h3>English Writing</h3>
-        <p>Menulis essay, artikel, dan konten dalam bahasa Inggris</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="90%"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="skill-icon">🎤</span>
-        <h3>Public Speaking</h3>
-        <p>Presentasi dan berbicara di depan umum dengan percaya diri</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="88%"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="skill-icon">📝</span>
-        <h3>Academic Writing</h3>
-        <p>Penulisan karya ilmiah dan tugas akademik berkualitas</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="85%"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="skill-icon">🤝</span>
-        <h3>Teamwork</h3>
-        <p>Kolaborasi tim yang efektif dan komunikatif</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="92%"></div></div>
-      </div>
-      <div class="skill-card reveal">
-        <span class="skill-icon">💡</span>
-        <h3>Creative Thinking</h3>
-        <p>Berpikir kreatif untuk solusi inovatif</p>
-        <div class="skill-bar"><div class="skill-bar-fill" data-width="87%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="education" id="education">
-    <div class="section-header reveal">
-      <span class="emoji">🎓</span>
-      <h2>Pendidikan</h2>
-      <p>Perjalanan akademik saya~</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item reveal-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <span class="year">2023 - Sekarang 🌸</span>
-          <h3>Universitas Pahlawan</h3>
-          <p>Sedang menempuh pendidikan S1. Aktif dalam kegiatan kampus dan organisasi. Fokus pada pengembangan kemampuan bahasa Inggris dan soft skills.</p>
-        </div>
-      </div>
-      <div class="timeline-item reveal-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <span class="year">2020 - 2023 📚</span>
-          <h3>SMA</h3>
-          <p>Lulus dengan nilai yang membanggakan. Aktif dalam kegiatan ekstrakurikuler English Club dan organisasi sekolah.</p>
-        </div>
-      </div>
-      <div class="timeline-item reveal-left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <span class="year">Sertifikasi 🏆</span>
-          <h3>English Proficiency</h3>
-          <p>Memiliki sertifikasi kemampuan bahasa Inggris yang diakui dan terus mengembangkan kompetensi linguistik.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="portfolio">
-    <div class="section-header reveal">
-      <span class="emoji">🎨</span>
-      <h2>Portfolio</h2>
-      <p>Beberapa karya dan pencapaian saya~</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card reveal">
-        <div class="portfolio-thumb">📖</div>
-        <div class="portfolio-info">
-          <h3>English Essay Competition</h3>
-          <p>Menulis essay bahasa Inggris tentang topik pendidikan dan budaya untuk kompetisi tingkat universitas.</p>
-          <div class="portfolio-tags">
-            <span>English</span><span>Writing</span><span>Competition</span>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal">
-        <div class="portfolio-thumb">🎭</div>
-        <div class="portfolio-info">
-          <h3>Presentasi Akademik</h3>
-          <p>Mempresentasikan makalah penelitian dalam bahasa Inggris di seminar kampus.</p>
-          <div class="portfolio-tags">
-            <span>Presentation</span><span>Research</span><span>Academic</span>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal">
-        <div class="portfolio-thumb">🌍</div>
-        <div class="portfolio-info">
-          <h3>Translation Project</h3>
-          <p>Proyek penerjemahan dokumen akademik dari bahasa Indonesia ke bahasa Inggris.</p>
-          <div class="portfolio-tags">
-            <span>Translation</span><span>Bilingual</span><span>Project</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="section-header reveal">
-      <span class="emoji">💌</span>
-      <h2>Hubungi Saya</h2>
-      <p>Yuk terhubung dengan saya~</p>
-    </div>
-    <div class="contact-wrapper">
-      <a href="mailto:mutiara@email.com" class="contact-card reveal">
-        <span class="c-icon">📧</span>
-        <h4>Email</h4>
-        <p>mutiara@email.com</p>
-      </a>
-      <a href="#" class="contact-card reveal">
-        <span class="c-icon">📱</span>
-        <h4>WhatsApp</h4>
-        <p>+62 xxx-xxxx-xxxx</p>
-      </a>
-      <a href="#" class="contact-card reveal">
-        <span class="c-icon">📸</span>
-        <h4>Instagram</h4>
-        <p>@mutiara.sophia</p>
-      </a>
-      <a href="#" class="contact-card reveal">
-        <span class="c-icon">💼</span>
-        <h4>LinkedIn</h4>
-        <p>Mutiara Sophia Ningsih</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-hearts">💖 🌸 ✨ 🌸 💖</div>
-    <p>© 2026 Mutiara Sophia Ningsih — Made with 💕</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
