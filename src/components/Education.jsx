@@ -4,19 +4,22 @@ import { useInView } from 'react-intersection-observer';
 
 const items = [
   {
-    year: '2023 - Sekarang 🌸',
+    year: '2023 - Present 🌸',
     title: 'Universitas Pahlawan',
-    desc: 'Sedang menempuh pendidikan S1. Aktif dalam kegiatan kampus dan organisasi. Fokus pada pengembangan kemampuan bahasa Inggris dan soft skills.',
+    desc: 'Currently pursuing a Bachelor\'s degree in English Education. Actively involved in campus activities and student organizations. Focused on developing English language skills and soft skills.',
+    emoji: '🏫',
   },
   {
     year: '2020 - 2023 📚',
-    title: 'SMA',
-    desc: 'Lulus dengan nilai yang membanggakan. Aktif dalam kegiatan ekstrakurikuler English Club dan organisasi sekolah.',
+    title: 'Senior High School',
+    desc: 'Graduated with outstanding grades. Active in the English Club extracurricular activities and student government.',
+    emoji: '📖',
   },
   {
-    year: 'Sertifikasi 🏆',
+    year: 'Certification 🏆',
     title: 'English Proficiency',
-    desc: 'Memiliki sertifikasi kemampuan bahasa Inggris yang diakui dan terus mengembangkan kompetensi linguistik.',
+    desc: 'Holds a recognized English proficiency certification and continuously developing linguistic competence.',
+    emoji: '🏅',
   },
 ];
 
@@ -31,9 +34,15 @@ export default function Education() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
       >
-        <span className="section-emoji">🎓</span>
-        <h2>Pendidikan</h2>
-        <p>Perjalanan akademik saya~</p>
+        <motion.span
+          className="section-emoji"
+          animate={inView ? { y: [0, -15, 0], rotate: [0, 10, -10, 0] } : {}}
+          transition={{ delay: 0.3, duration: 1, type: 'spring' }}
+        >
+          🎓
+        </motion.span>
+        <h2>Education</h2>
+        <p>My academic journey so far~</p>
       </motion.div>
 
       <div className="timeline">
@@ -50,10 +59,18 @@ export default function Education() {
               initial={{ scale: 0 }}
               animate={inView ? { scale: 1 } : {}}
               transition={{ delay: 0.3 + i * 0.2, type: 'spring', stiffness: 300 }}
-            />
+            >
+              <motion.span
+                style={{ position: 'absolute', fontSize: '12px', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                {item.emoji}
+              </motion.span>
+            </motion.div>
             <motion.div
               className="timeline-card"
-              whileHover={{ x: 10, scale: 1.02 }}
+              whileHover={{ x: 10, scale: 1.02, boxShadow: '0 12px 40px rgba(255,107,157,0.25)' }}
             >
               <span className="year">{item.year}</span>
               <h3>{item.title}</h3>

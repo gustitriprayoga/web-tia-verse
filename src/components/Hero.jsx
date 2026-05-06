@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import profileImg from '../assets/profile.png';
 
 const floatingIcons = [
@@ -15,7 +15,7 @@ const floatingIcons = [
   { emoji: '🎀', x: '-5%', y: '70%', delay: 2.2 },
 ];
 
-const typingTexts = ['English Speaker 🇬🇧', 'University Student 🎓', 'Creative Thinker 💡', 'Hard Worker 💪', 'Fast Learner 🚀'];
+const typingTexts = ['English Speaker 🇬🇧', 'Creative Thinker 💡', 'Public Speaker 🎤', 'Kids English Teacher 👧', 'Team Player 🤝'];
 
 function useTypingEffect(texts, typingSpeed = 80, deletingSpeed = 40, pauseTime = 1500) {
   const [display, setDisplay] = useState('');
@@ -46,6 +46,47 @@ function useTypingEffect(texts, typingSpeed = 80, deletingSpeed = 40, pauseTime 
   }, [charIdx, isDeleting, textIdx, texts, typingSpeed, deletingSpeed, pauseTime]);
 
   return display;
+}
+
+// Bouncy emoji rain that pops up randomly
+function EmojiRain() {
+  const emojis = ['🌸', '⭐', '💖', '🎀', '🦋', '✨', '🌈', '🍬', '🧸', '🎈'];
+  const items = Array.from({ length: 15 }, (_, i) => ({
+    id: i,
+    emoji: emojis[Math.floor(Math.random() * emojis.length)],
+    left: Math.random() * 100,
+    delay: Math.random() * 10,
+    duration: 8 + Math.random() * 6,
+    size: 16 + Math.random() * 20,
+  }));
+
+  return items.map((p) => (
+    <motion.div
+      key={p.id}
+      className="emoji-rain"
+      style={{
+        position: 'absolute',
+        left: `${p.left}%`,
+        top: '-40px',
+        fontSize: `${p.size}px`,
+        zIndex: 0,
+        pointerEvents: 'none',
+      }}
+      animate={{
+        y: ['0vh', '110vh'],
+        rotate: [0, 360],
+        opacity: [0, 1, 1, 0],
+      }}
+      transition={{
+        duration: p.duration,
+        delay: p.delay,
+        repeat: Infinity,
+        ease: 'linear',
+      }}
+    >
+      {p.emoji}
+    </motion.div>
+  ));
 }
 
 // Background particles
@@ -91,6 +132,38 @@ function Particles() {
   ));
 }
 
+// Surprise popup that appears once
+function SurprisePopup() {
+  const [show, setShow] = useState(false);
+  const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), 4000);
+    return () => clearTimeout(t);
+  }, []);
+
+  if (dismissed) return null;
+
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          className="surprise-popup"
+          initial={{ scale: 0, rotate: -180, opacity: 0 }}
+          animate={{ scale: 1, rotate: 0, opacity: 1 }}
+          exit={{ scale: 0, rotate: 180, opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+          onClick={() => setDismissed(true)}
+        >
+          <span className="surprise-emoji">🎉</span>
+          <p>Welcome to my portfolio!</p>
+          <span className="surprise-tap">tap to close</span>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function Hero() {
   const typedText = useTypingEffect(typingTexts);
 
@@ -98,6 +171,8 @@ export default function Hero() {
     <section className="hero" id="home">
       <div className="hero-bg-gradient" />
       <Particles />
+      <EmojiRain />
+      <SurprisePopup />
 
       <div className="hero-content">
         {/* Text Side */}
@@ -113,7 +188,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            🌸 Halo, Perkenalkan saya
+            🌸 Hello, I'm
           </motion.span>
 
           <motion.h1
@@ -140,7 +215,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
           >
-            Mahasiswa S1 Universitas Pahlawan yang passionate dalam bahasa Inggris dan pengembangan diri ✨
+            English Education student at Universitas Pahlawan who is passionate about the English language and personal development ✨
           </motion.p>
 
           <motion.div
@@ -152,20 +227,20 @@ export default function Hero() {
             <motion.a
               href="#about"
               className="btn btn-primary"
-              whileHover={{ scale: 1.06, y: -3 }}
+              whileHover={{ scale: 1.06, y: -3, rotate: [0, -2, 2, 0] }}
               whileTap={{ scale: 0.97 }}
               onClick={(e) => { e.preventDefault(); document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' }); }}
             >
-              Kenali Saya 💖
+              Get to Know Me 💖
             </motion.a>
             <motion.a
               href="#contact"
               className="btn btn-outline"
-              whileHover={{ scale: 1.06, y: -3 }}
+              whileHover={{ scale: 1.06, y: -3, rotate: [0, 2, -2, 0] }}
               whileTap={{ scale: 0.97 }}
               onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
             >
-              Hubungi 💌
+              Contact Me 💌
             </motion.a>
           </motion.div>
         </motion.div>
